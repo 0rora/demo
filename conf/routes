@@ -21,12 +21,15 @@ GET         /payments/scheduledBefore controllers.PaymentsController.listSchedul
 # Authentication
 GET         /login                    controllers.HomeController.login()
 GET         /logout                   @org.pac4j.play.LogoutController.logout()
-GET         /callback                 @org.pac4j.play.CallbackController.callback()
 POST        /callback                 @org.pac4j.play.CallbackController.callback()
 
 # Demo site specific
 GET         /demo/payments.csv        controllers.DemoSiteAssetsController.paymentsCSV
 
+# Admin
+POST        /accounts/add             controllers.AdminController.addAccount
+GET         /accounts/list            controllers.AdminController.listAccounts
+
+>>>>>>> upstream/master
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file             controllers.Assets.versioned(path="/public", file: Asset)
-
